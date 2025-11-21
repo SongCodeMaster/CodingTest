@@ -15,7 +15,7 @@ while i < j:
     elif result > m:
         j -= 1
     else:
+        count += 1
         i += 1
         j -= 1
-        count += 1
 print(count)
