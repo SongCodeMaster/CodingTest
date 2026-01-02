@@ -1,7 +1,9 @@
 from collections import deque
+import sys
+sys.setrecursionlimit(10000)
+
 N, M, start = list(map(int, input().split()))
 arr = [[] for _ in range(N+1)]
-visited = [False] * (N+1)
 
 for _ in range(M):
     u, v = map(int, input().split())
@@ -18,20 +20,22 @@ def dfs(v):
         if not visited[i]:
             dfs(i)
 
-
-
-def bfs(graph, start):
-    visited = set([start]) # 현재노드 방문
-    queue = deque([start])
-
-    while queue:
-        vertex = queue.popleft()
-        print(vertex, end=' ')
-        for nxt in graph[vertex]:
-            if nxt not in visited:
-                visited.add(nxt)
-                queue.append(nxt)
+visited = [False] * (N+1)
 
 dfs(start)
+
+def bfs(v):
+    queue = deque()
+    queue.append(v)
+    visited[v]=True
+    while queue:
+        now_Node = queue.popleft()
+        print(now_Node, end=' ')
+        for i in arr[now_Node]:
+            if not visited[i]:
+                visited[i] = True
+                queue.append(i)
 print()
-bfs(arr, start)
+
+visited = [False] * (N+1)
+bfs(start)
