@@ -16,7 +16,8 @@ dy = [0,0,-1,1]
 
 def bfs(start_x,start_y):
     #  큐 설정 및 이동 방향(상,하,좌,우)
-    q = deque([(start_x, start_y)]) 
+    q = deque() 
+    q.append((start_x, start_y))
     visited[start_x][start_y] = True
     count = 1 # 단지 내 집의 개수 (현재 시작점 포함)
 
