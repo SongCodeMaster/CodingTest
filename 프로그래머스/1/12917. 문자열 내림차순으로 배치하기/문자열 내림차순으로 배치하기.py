@@ -1,4 +1,3 @@
 def solution(s):
-    new = ''.join(sorted(s, reverse=True))
-
-    return new
+    new_string = sorted(list(s), reverse=True)
+    return ''.join(new_string)
