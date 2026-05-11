@@ -1,14 +1,14 @@
 def solution(s):
     answer = []
-    words = s.split(' ')
+    s = s.split(' ')
     
-    for word in words:
-        converted = ''
-        for i in range(len(word)):
-            if i % 2 == 0:
-                converted += word[i].upper()
+    for i in s:
+        my_string = ''
+        for index, string in enumerate(i):
+            if index % 2 == 0:
+                my_string += string.upper()
             else:
-                converted += word[i].lower()
-        answer.append(converted)
-    
+                my_string += string.lower()
+        answer.append(my_string)
+
     return ' '.join(answer)
