@@ -1,14 +1,15 @@
 def solution(s):
     answer = []
-    s = s.split(' ')
+    my_word = s.split(' ')
     
-    for i in s:
-        my_string = ''
-        for index, string in enumerate(i):
+    for i in my_word:
+        my_answer = ''
+        for index, word in enumerate(i):
             if index % 2 == 0:
-                my_string += string.upper()
+                my_answer += word.upper()
             else:
-                my_string += string.lower()
-        answer.append(my_string)
-
+                my_answer += word.lower()
+                
+        answer.append(my_answer)
+    
     return ' '.join(answer)
