@@ -1,16 +1,12 @@
 def solution(participant, completion):
-    dic = {}
+    dict = {}
+    for i in participant:
+        dict[i] = dict.get(i, 0) + 1
     
-    for p in participant:
-        if p in dic:
-            dic[p] += 1
-        else:
-            dic[p] = 1
+    for i in completion:
+        dict[i] -= 1
     
-    for c in completion:
-        if c in dic:
-            dic[c] -= 1
-    for key, val in dic.items():
-        if val > 0:
-            return key        
-                
+    for key, value in dict.items():
+        if value >= 1:
+            return key
+    
