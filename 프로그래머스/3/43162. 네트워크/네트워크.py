@@ -1,20 +1,18 @@
-# 연결요소 개수 세기, dfs 몇번된건지?
-def dfs(n, node, computers):
-    global visited
-    visited[node] = True
-    
-    for nxt in range(0,n):
-        if not visited[nxt] and computers[node][nxt] == 1:
-            dfs(n, nxt, computers)
-    
 def solution(n, computers):
-    global visited
+    answer = 0
     visited = [False]*(n)
+    
+    def dfs(node):
+        for next in range(n):
+            if not visited[next] and computers[node][next] == 1:
+                visited[next] = True
+                dfs(next)
+    
     count = 0
-    
-    for i in range(0,n):
-            if not visited[i]:
-                dfs(n, i, computers)
-                count += 1
-    
+    for i in range(n):
+        if not visited[i]:
+            visited[i] = True
+            dfs(i) 
+            count += 1
+        
     return count
