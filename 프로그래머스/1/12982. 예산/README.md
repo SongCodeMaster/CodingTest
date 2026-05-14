@@ -1,10 +1,10 @@
 # [level 1] 예산 - 12982 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12982) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12982?gad_source=1&gad_campaignid=23037984604&gbraid=0AAAAAC_c4nD39d4NKVwLXCyivV2dXxg39&gclid=CjwKCAjw5ZXQBhBdEiwAI5XVWVAKliMM3VMLloRnULKmJGSoqnIYPQ4SZlHuW6cO5h6oshcUM16e3hoCS14QAvD_BwE) 
 
 ### 성능 요약
 
-메모리: 9.16 MB, 시간: 0.03 ms
+메모리: 9.15 MB, 시간: 0.01 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2026년 05월 06일 20:11:23
+2026년 05월 15일 00:57:17
 
 ### 문제 설명
 
