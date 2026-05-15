@@ -1,12 +1,10 @@
 def solution(participant, completion):
-    dict = {}
-    for i in participant:
-        dict[i] = dict.get(i, 0) + 1
+    participant.sort()
+    completion.sort()
     
-    for i in completion:
-        dict[i] -= 1
+    for i in range(len(completion)):
+        if participant[i] != completion[i]:
+            return participant[i]
     
-    for key, value in dict.items():
-        if value >= 1:
-            return key
-    
+    result = participant[len(participant)-1]
+    return result
