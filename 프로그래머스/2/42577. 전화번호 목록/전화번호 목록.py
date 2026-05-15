@@ -1,11 +1,13 @@
 def solution(phone_book):
-    phone_set = set(phone_book)
-    
-    for i in phone_book:
-        separate = ''
-        for j in range(len(i)-1):
-            separate += i[j]
-            if separate in phone_set:
-                return False
+    answer = True
 
+    book_set = set(phone_book)
+    
+    for word in phone_book:
+        separate = ''
+        for i in range(len(word) - 1):
+            separate += word[i]
+            if separate in book_set:
+                return False
+            
     return True
