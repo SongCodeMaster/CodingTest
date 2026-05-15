@@ -1,34 +1,34 @@
 from collections import deque
-
-dy = [1,-1,0,0]
-dx = [0,0,1,-1]
-
-def bfs(n,m,maps,h,w,visited):
-    visited[n][m] = 1
-    q = deque()
-    q.append((n,m))
-    
-    while q:
-        u, v = q.popleft()
-        
-        if u == h-1 and v == w-1:
-            return visited[u][v]
-            
-        for i in range(4):
-            ny = dy[i] + u
-            nx = dx[i] + v
-            if 0 <= ny < h and 0 <= nx < w:
-                if not visited[ny][nx] and maps[ny][nx] == 1:
-                    visited[ny][nx] = visited[u][v] + 1
-                    q.append((ny,nx))
-    return -1
-
+# 방향벡터 정의후 연결된 요소끼리 이동하며 dist return
 def solution(maps):
-
-    h = len(maps)
-    w = len(maps[0])
+    answer = 0
+    row_len = len(maps)
+    col_len = len(maps[0])
     
-    visited = [[0]*(w) for _ in range(h)]
+    dr = [-1,1,0,0]
+    dc = [0,0,1,-1]
     
-    return bfs(0,0,maps,h,w,visited)
+    visited = [[False]*(col_len) for _ in range(row_len)]
     
+    def bfs(start_row, start_col):
+        q = deque()
+        q.append((start_row, start_col, 1))
+        visited[start_row][start_col] = True
+        while q:
+            current_row, current_col, dist = q.popleft()
+            
+            if current_row == (row_len - 1) and current_col == (col_len - 1):
+                return dist
+            for i in range(4):
+                next_row = dr[i] + current_row
+                next_col = dc[i] + current_col
+                
+                if 0 <= next_row < row_len and 0 <= next_col < col_len and maps[next_row][next_col] == 1:
+                    if not visited[next_row][next_col]:
+                        visited[next_row][next_col] = True
+                        q.append((next_row, next_col, dist + 1))
+        
+        return -1
+    
+    return bfs(0,0)
+     
