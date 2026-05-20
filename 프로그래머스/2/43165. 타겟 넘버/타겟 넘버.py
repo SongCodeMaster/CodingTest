@@ -1,16 +1,15 @@
 def solution(numbers, target):
-    count = 0
+    answer = 0
     
     def dfs(idx, total):
-        nonlocal count
-        
+        nonlocal answer 
         if idx == len(numbers):
             if total == target:
-                count += 1
-            return 
+                answer += 1
+            return
         
-        dfs(idx + 1, total + numbers[idx])
-        dfs(idx + 1, total - numbers[idx])
+        dfs(idx+1, total + numbers[idx])
+        dfs(idx+1, total - numbers[idx])
     
     dfs(0,0)
-    return count
+    return answer
