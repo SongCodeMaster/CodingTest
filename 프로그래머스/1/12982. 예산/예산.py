@@ -1,14 +1,13 @@
 def solution(d, budget):
-    if sum(d) < budget:
-        return len(d)
-        
-    count = 0
-    d.sort()
-
-    for i in d:
-        if budget < i:
-            break
+    sorted_d = sorted(d)
+    answer = 0
+    
+    for i in sorted_d:
         budget -= i
-        count += 1
         
-    return count
+        if budget < 0:
+            break
+        
+        answer+= 1
+        
+    return answer
