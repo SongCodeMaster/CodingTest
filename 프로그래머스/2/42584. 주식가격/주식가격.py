@@ -1,17 +1,16 @@
 def solution(prices):
-    # (주식값, 인덱스)
     stack = []
-    result = [0] * (len(prices))
+    answer = [0]*len(prices)
     
     for i in range(len(prices)):
-        while stack and stack[-1][0] > prices[i]:
-            value, index = stack.pop()
-            result[index] = i - index
+
+        while stack and stack[-1][1] > prices[i]:
+            top_i, price = stack.pop()
+            answer[top_i] = i - top_i
         
-        stack.append((prices[i], i))
-    
+        stack.append((i,prices[i]))
     while stack:
-        value, index = stack.pop()
-        result[index] = len(prices) - 1 - index
+        current_i, price = stack.pop()
+        answer[current_i] = len(prices) - current_i - 1
         
-    return result
+    return answer
