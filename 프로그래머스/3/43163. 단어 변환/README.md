@@ -1,10 +1,10 @@
 # [level 3] 단어 변환 - 43163 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/43163?gad_source=1&gad_campaignid=22356298761&gbraid=0AAAAAC_c4nAPwC_TZGDifqpZaZxoungeb&gclid=CjwKCAjw5ZXQBhBdEiwAI5XVWcr-U9SIRg7iKDy-rifFrAItlob3jKDDJ6GgD7v_ToP8X7DbY3z3DxoC1CsQAvD_BwE) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/43163?gad_source=1&gad_campaignid=23716289893&gbraid=0AAAAAC_c4nDKR6vsWa5PX0ZZkBugbUIzC&gclid=CjwKCAjwgO7RBhBKEiwAZNP85s-U__2KN7wc7kT3xkST7pYmBi-CY3VpVPMQlPqVkMFqj0oWYgLyhBoCrzIQAvD_BwE) 
 
 ### 성능 요약
 
-메모리: 9.16 MB, 시간: 0.39 ms
+메모리: 11.5 MB, 시간: 0.09 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2026년 05월 18일 22:30:43
+2026년 06월 25일 14:53:03
 
 ### 문제 설명
 
