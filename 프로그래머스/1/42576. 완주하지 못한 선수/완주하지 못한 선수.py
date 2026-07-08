@@ -7,4 +7,5 @@ def solution(participant, completion):
             return participant[i]
     
     result = participant[len(participant)-1]
+        
     return result
