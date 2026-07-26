@@ -1,31 +1,22 @@
 from collections import deque
+
 def solution(n, edge):
-    answer = 0
-    visited = [True] * (n+1)
-    
-    graph = [[] for _ in range(n+1) ]
-    
+    graph = [[] for _ in range(n + 1)]
     for u, v in edge:
         graph[u].append(v)
         graph[v].append(u)
-    
-    distance = [0]*(n+1)
-    
-    q = deque()
-    q.append(1)
+        
+    distances = [-1] * (n + 1)
+    distances[1] = 0
+    q = deque([1])
     
     while q:
-        curr_node = q.popleft()
+        curr = q.popleft()
         
-        for next_node in graph[curr_node]:
-            if distance[next_node] == 0 and next_node != 1:
-                distance[next_node] += 1 + distance[curr_node]
-                q.append(next_node)
-    
-    max_value = max(distance)
-    
-    for i in range(n+1):
-        if distance[i] == max_value:
-            answer += 1
-    print(distance)
-    return answer
+        for nxt in graph[curr]:
+            if distances[nxt] == -1:
+                distances[nxt] = distances[curr] + 1
+                q.append(nxt)
+                
+    max_dist = max(distances)
+    return distances.count(max_dist)
