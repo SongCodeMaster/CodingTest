@@ -14,8 +14,8 @@ def solution(tickets):
         top = stack[-1]
         
         if top in graph and len(graph[top]) > 0:
-            next_travle = graph[top].pop()
-            stack.append(next_travle)
+            next = graph[top].pop()
+            stack.append(next)
         else:
             path.append(stack.pop())
             
