@@ -1,34 +1,31 @@
 from collections import deque
-# 방향벡터 정의후 연결된 요소끼리 이동하며 dist return
+# 예외케이스: 도달못하면 return -1, 최솟값 return, BFS
 def solution(maps):
-    answer = 0
-    row_len = len(maps)
-    col_len = len(maps[0])
+    row = len(maps)
+    col = len(maps[0])
     
     dr = [-1,1,0,0]
-    dc = [0,0,1,-1]
+    dc = [0,0,-1,1]
     
-    visited = [[False]*(col_len) for _ in range(row_len)]
+    visited = [[False] * (col) for _ in range(row)]
     
-    def bfs(start_row, start_col):
-        q = deque()
-        q.append((start_row, start_col, 1))
-        visited[start_row][start_col] = True
-        while q:
-            current_row, current_col, dist = q.popleft()
-            
-            if current_row == (row_len - 1) and current_col == (col_len - 1):
-                return dist
-            for i in range(4):
-                next_row = dr[i] + current_row
-                next_col = dc[i] + current_col
-                
-                if 0 <= next_row < row_len and 0 <= next_col < col_len and maps[next_row][next_col] == 1:
-                    if not visited[next_row][next_col]:
-                        visited[next_row][next_col] = True
-                        q.append((next_row, next_col, dist + 1))
+    q = deque()
+    visited[0][0] = True
+    q.append((0,0,1))
+    dist = 0
+    
+    while q:
+        start_r, start_c, dist = q.popleft()
         
-        return -1
+        if start_r == row - 1 and start_c == col - 1:
+            return dist
+        
+        for i in range(4):
+            nr = start_r + dr[i]
+            nc = start_c + dc[i]
+            
+            if 0 <= nr < row and 0 <= nc < col and visited[nr][nc] == False and maps[nr][nc] == 1:
+                visited[nr][nc] = True
+                q.append((nr,nc,dist+1))
     
-    return bfs(0,0)
-     
+    return -1
