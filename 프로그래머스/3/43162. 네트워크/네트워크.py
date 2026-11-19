@@ -1,19 +1,17 @@
+# dfs로 연결요소 개수 세기
 def solution(n, computers):
     answer = 0
-    visited = [False] * (n)
+    visited = [False] * n
     
-    def dfs(curr_node):
-        visited[curr_node] = True
-        
-        for i in range(n):
-                if curr_node != i and computers[curr_node][i] == 1 and not visited[i]:
-                    dfs(i)
-                    
+    def dfs(node):
+        for nxt in range(n):
+            if not visited[nxt] and computers[node][nxt] == 1:
+                visited[nxt] = True
+                dfs(nxt)
     
     for i in range(n):
         if not visited[i]:
             answer += 1
             dfs(i)
-            
-        
+    
     return answer
