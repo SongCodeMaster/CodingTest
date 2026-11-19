@@ -7,8 +7,7 @@ def solution(n, edge):
     
     graph = [[] for _ in range(n+1)]
     
-    for i in range(len(edge)):
-        u, v = edge[i]
+    for u, v in edge:
         graph[u].append(v)
         graph[v].append(u)
     
