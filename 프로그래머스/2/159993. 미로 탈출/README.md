@@ -1,10 +1,10 @@
 # [level 2] 미로 탈출 - 159993 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/159993?gad_source=1&gad_campaignid=22356298761&gbraid=0AAAAAC_c4nDC5FtdReEx5x3fc0xHP_mz8&gclid=CjwKCAjw5ZXQBhBdEiwAI5XVWb7P5QVQ4fsgo5_O8heHoY3oRnD4xIKIB6ozln3KENS2u7ucLvMpWxoCl8kQAvD_BwE) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/159993) 
 
 ### 성능 요약
 
-메모리: 9.14 MB, 시간: 11.49 ms
+메모리: 11.4 MB, 시간: 6.43 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2026년 05월 14일 17:41:52
+2026년 11월 22일 22:59:50
 
 ### 문제 설명
 
